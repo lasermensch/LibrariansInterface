@@ -1,0 +1,36 @@
+﻿@using System.Web;
+@model BiblotekariensGränssnitt.Models.ViewModels.UnreturnedItemsViewModel;
+@{
+    ViewData["Title"] = "Unreturned Items";
+}
+
+
+<div class="row">
+    <div class="col-lg-5">
+        <form asp-action="UnreturnedItems" asp-route-id="Dto.BorrowerID" method="post">
+            <select class="form-control" name="borrowerID" asp-for="Dto.BorrowerID"
+                    asp-items="@(new SelectList(Model.Dtos, "BorrowerID", "BorrowerFullName"))" size="@Model.Dtos.Count" onchange="this.form.submit()" ></select>
+            <input type="submit" class="btn btn-block" value="Visa försening" />
+
+        </form>
+    </div>
+    @{ if (Model.Dto != null)
+        {
+            <div class="col-lg-5">
+                <div>
+                    <p id="borrowerID">@Model.Dto.BorrowerID</p>
+                    <p id="borrowerFullName">@Model.Dto.BorrowerFullName</p>
+                    <p id="email">@Model.Dto.Email</p>
+                    <p id="phoneNumber">@Model.Dto.PhoneNumber</p>
+                    <p id="address">@Model.Dto.Address</p>
+                </div>
+                <div>
+                    <p id="inventoryID">@Model.Dto.InventoryID</p>
+                    <p id="title">@Model.Dto.Title</p>
+                    <p id="authorName">@Model.Dto.AuthorName</p>
+                    <p id="isbn">@Model.Dto.Isbn</p>
+                </div>
+            </div>
+        }}
+
+</div>
