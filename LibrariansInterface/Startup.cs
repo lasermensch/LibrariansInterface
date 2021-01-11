@@ -10,7 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Polly; //Paket nedladdat genom nuget, för httpclient nedan.
 
-namespace BiblotekariensGränssnitt
+namespace LibrariansInterface
 {
     public class Startup
     {

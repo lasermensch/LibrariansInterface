@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BiblotekariensGränssnitt.Models
+namespace LibrariansInterface.Models
 {
     public class ErrorViewModel
     {

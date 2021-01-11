@@ -1,4 +1,4 @@
-﻿using BiblotekariensGränssnitt.Models;
+﻿using LibrariansInterface.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Net.Http;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using BiblotekariensGränssnitt.Models.ViewModels;
+using LibrariansInterface.Models.ViewModels;
 
-namespace BiblotekariensGränssnitt.Controllers
+namespace LibrariansInterface.Controllers
 {
     public class HomeController : Controller
     {
