@@ -55,7 +55,14 @@ namespace LibrariansInterface
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.UseStaticFiles(new StaticFileOptions() //så att man kan ändra i css-filen och se resultatet direkt!
+            {
+                OnPrepareResponse = context =>
+                {
+                    context.Context.Response.Headers.Add("Cache-Control", "no-cache, no-store");
+                    context.Context.Response.Headers.Add("Expires", "-1");
+                }
+            });
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

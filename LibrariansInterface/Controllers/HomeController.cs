@@ -17,7 +17,7 @@ namespace LibrariansInterface.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IHttpClientFactory _httpClientFactory;
-        
+
 
         public HomeController(ILogger<HomeController> logger, IHttpClientFactory httpClientFactory)
         {
@@ -25,34 +25,26 @@ namespace LibrariansInterface.Controllers
             _httpClientFactory = httpClientFactory;
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            
-            var client = _httpClientFactory.CreateClient("API Client");
 
-            var result = await client.GetAsync("/api/borrowings/unreturneditems"); //kontrollera adressen noggrannt!
-            if(result.IsSuccessStatusCode)
-            {
-                
-                var content = await result.Content.ReadAsStringAsync();
-                var import = JsonConvert.DeserializeObject<List<UnreturnedItemDTO>>(content); //Detta fungerar!
-                
-                LocalListUnreturnedItems.LocalListOfDTOs = import;
-                
-                return RedirectToAction(nameof(UnreturnedItems));
-            }
             return View();
-            
+
         }
         public IActionResult UnreturnedItems()
         {
             var viewmodel = new UnreturnedItemsViewModel();
             viewmodel.Dtos = LocalListUnreturnedItems.LocalListOfDTOs;
+            if (LocalListUnreturnedItems.LocalListOfDTOs == null)
+            {
+                return RedirectToAction(nameof(LoadUnreturnedItemsFromAPI));
+            }
             return View(viewmodel);
         }
         [HttpPost]
         public async Task<IActionResult> UnreturnedItems(string borrowerID)
         {
+
             var viewmodel = new UnreturnedItemsViewModel();
             viewmodel.Dtos = LocalListUnreturnedItems.LocalListOfDTOs;
             if (borrowerID != null)
@@ -63,7 +55,38 @@ namespace LibrariansInterface.Controllers
             return View(viewmodel);
 
         }
+        public async Task<IActionResult> LoadUnreturnedItemsFromAPI()
+        {
 
+            var client = _httpClientFactory.CreateClient("API Client");
+            HttpResponseMessage result = null;
+            try
+            {
+                result = await client.GetAsync("/api/borrowings/unreturneditems"); //kontrollera adressen noggrannt!
+
+            }
+            catch (Exception epicFail)
+            {
+                _logger.LogInformation(epicFail.Message); //Så att man i outputfönstret ser felmeddelandet. 
+            }
+
+            if (result != null && result.IsSuccessStatusCode)
+            {
+
+                var content = await result.Content.ReadAsStringAsync();
+                var import = JsonConvert.DeserializeObject<List<UnreturnedItemDTO>>(content);
+
+                LocalListUnreturnedItems.LocalListOfDTOs = import;
+
+                return RedirectToAction(nameof(UnreturnedItems));
+            }
+
+            return RedirectToAction(nameof(ConnectionFailed));
+        }
+        public IActionResult ConnectionFailed()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
