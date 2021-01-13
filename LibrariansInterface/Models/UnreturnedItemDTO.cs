@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace LibrariansInterface.Models
+﻿namespace LibrariansInterface.Models
 {
     public class UnreturnedItemDTO //Best Practice är att inte skicka obehandlad information mellan api och mvc. 
     {

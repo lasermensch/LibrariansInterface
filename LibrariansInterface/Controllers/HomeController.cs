@@ -1,15 +1,14 @@
 ﻿using LibrariansInterface.Models;
+using LibrariansInterface.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
 using System.Net.Http;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using LibrariansInterface.Models.ViewModels;
+using System.Threading.Tasks;
 
 namespace LibrariansInterface.Controllers
 {
@@ -42,7 +41,7 @@ namespace LibrariansInterface.Controllers
             return View(viewmodel);
         }
         [HttpPost]
-        public async Task<IActionResult> UnreturnedItems(string borrowerID)
+        public IActionResult UnreturnedItems(string borrowerID)
         {
 
             var viewmodel = new UnreturnedItemsViewModel();
