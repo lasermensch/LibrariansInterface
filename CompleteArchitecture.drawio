@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-01-13T17:42:24.682Z" agent="5.0 (Windows)" etag="kwySYtR_mqH8nu5lInRD" version="14.2.2" type="github">
+<mxfile host="app.diagrams.net" modified="2021-01-13T17:48:57.165Z" agent="5.0 (Windows)" etag="2Sy2tCmvlyRI0c6SIUBH" version="14.2.2" type="github">
   <diagram id="zIGolrEYgKs-RykICPmO" name="Page-1">
     <mxGraphModel dx="1422" dy="735" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -13,19 +13,31 @@
           <mxGeometry x="270" y="170" width="20" height="60" as="geometry" />
         </mxCell>
         <mxCell id="A9Dyq57Q6WsIOIDd_YCF-3" value="" style="html=1;dashed=0;whitespace=wrap;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon;prIcon=api" vertex="1" parent="1">
-          <mxGeometry x="205" y="410" width="150" height="110" as="geometry" />
+          <mxGeometry x="205" y="400" width="150" height="110" as="geometry" />
         </mxCell>
         <mxCell id="A9Dyq57Q6WsIOIDd_YCF-4" value="" style="aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.client_application" vertex="1" parent="1">
           <mxGeometry x="217.5" y="230" width="125" height="80" as="geometry" />
         </mxCell>
         <mxCell id="A9Dyq57Q6WsIOIDd_YCF-5" value="" style="shape=datastore;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="224" y="620" width="112" height="100" as="geometry" />
+          <mxGeometry x="224" y="600" width="112" height="100" as="geometry" />
         </mxCell>
         <mxCell id="A9Dyq57Q6WsIOIDd_YCF-6" value="" style="shape=singleArrow;direction=south;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="270" y="560" width="20" height="60" as="geometry" />
+          <mxGeometry x="270" y="540" width="20" height="60" as="geometry" />
         </mxCell>
         <mxCell id="A9Dyq57Q6WsIOIDd_YCF-8" value="" style="shape=singleArrow;direction=south;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="270" y="350" width="20" height="60" as="geometry" />
+          <mxGeometry x="270" y="340" width="20" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="A9Dyq57Q6WsIOIDd_YCF-9" value="User/Librarian" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="260" y="140" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="A9Dyq57Q6WsIOIDd_YCF-10" value="Client/LibrariansInterface" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="260" y="310" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="A9Dyq57Q6WsIOIDd_YCF-11" value="API/Library" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="260" y="510" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="A9Dyq57Q6WsIOIDd_YCF-12" value="Database" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="260" y="700" width="40" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
