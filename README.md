@@ -15,7 +15,9 @@
     - Microsoft.Extensions.Http.Polly v5.0.1
     - newtonsoft.json v12.0.3
 
-- programmet är en del av en större arkitektur. Detta är klient-delen.
+- programmet är en del av en större arkitektur. Detta är klient-delen:
+
+![Arkitektur](CompleteArchitecture.png)
 
 ##  För en applikation i produktion
 
@@ -25,7 +27,8 @@ Detta program är inte klart för produktionssättning. Det bör, tills det är 
 
 ### Konfigurering av applikation
 
-Konfigurering för att koppla upp mot API görs med denna kod i **Startup.cs** i metoden ConfigureServices(IServiceCollection services):
+Konfigurering för att koppla upp mot API görs med denna kod i **Startup.cs** i metoden _ConfigureServices(IServiceCollection services)_.
+Den kan se ut såhär:
 ```
             services.AddHttpClient("API Client", client =>
             {
